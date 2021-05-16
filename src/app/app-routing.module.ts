@@ -5,13 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Components for rout
 import { HomeComponent } from './components/home/home.component';
-import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { AboutUsComponent } from './components/about-us/about-us.component';
+import { SignUpComponent } from './components/contact-us/contact-us.component';
+import { LoginComponent } from './components/about-us/about-us.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'about', component: AboutUsComponent },
-  { path: 'contact', component: ContactUsComponent }
+  { path: 'about', component: LoginComponent },
+  { path: 'contact', component: SignUpComponent }
 
 ]
 

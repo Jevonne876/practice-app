@@ -1,1 +1,39 @@
-<p>navbar works!</p>
+<nav class="nav">
+  <div class="primaryDiv">
+    <div class="secondaryDiv">
+      <div>
+        <a routerLink="/" class="logoLink">TD TRACKER</a>
+      </div>
+
+      <!-- ham buger menu  -->
+      <div class="hamburgerMenu">
+        <button class="hamburgerButton" (click)="showMenu()">
+          <svg viewBox="0 0 100 80" width="15" height="15">
+            <rect width="100" height="20"></rect>
+            <rect y="30" width="100" height="20"></rect>
+            <rect y="60" width="100" height="20"></rect>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- moblie menu -->
+    <div class="mobileNavigation" *ngIf="toggleMenu">
+      <div class="flex-col">
+        <div class="mt-2">
+          <a href="#" class="nav-links">Login</a>
+        </div>
+
+        <div class="mt-2 mb-2">
+          <a href="#" class="nav-links">SignUp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden sm:block">
+      <a href="#" class="nav-links">Login</a>
+
+      <a href="#" class="nav-links">SignUp</a>
+    </div>
+  </div>
+</nav>
