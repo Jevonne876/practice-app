@@ -21,19 +21,27 @@
     <div class="mobileNavigation" *ngIf="toggleMenu">
       <div class="flex-col">
         <div class="mt-2">
-          <a href="#" class="nav-links">Login</a>
+          <a routerLinkActive="active" routerLink="/login" class="nav-links"
+            >Login</a
+          >
         </div>
 
         <div class="mt-2 mb-2">
-          <a href="#" class="nav-links">SignUp</a>
+          <a routerLinkActive="active" routerLink="/signup" class="nav-links"
+            >SignUp</a
+          >
         </div>
       </div>
     </div>
 
     <div class="hidden sm:block">
-      <a href="#" class="nav-links">Login</a>
+      <a routerLinkActive="active" routerLink="/login" class="nav-links"
+        >Login</a
+      >
 
-      <a href="#" class="nav-links">SignUp</a>
+      <a routerLinkActive="active" routerLink="/signup" class="ml-2 nav-links"
+        >SignUp</a
+      >
     </div>
   </div>
 </nav>

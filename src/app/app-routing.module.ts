@@ -1,3 +1,4 @@
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -5,13 +6,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Components for rout
 import { HomeComponent } from './components/home/home.component';
-import { SignUpComponent } from './components/contact-us/contact-us.component';
 import { LoginComponent } from './components/login/login.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'about', component: LoginComponent },
-  { path: 'contact', component: SignUpComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignUpComponent }
 
 ]
 
