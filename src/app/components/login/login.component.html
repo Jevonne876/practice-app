@@ -1,11 +1,11 @@
-<div class="flex justify-center mt-5">
-  <div class="flex flex-col w-2/5 px-4 py-4 bg-white rounded-lg shadow-lg">
+<div class="mainDiv">
+  <div class="innerDiv">
     <div class="content-center">
-      <h1 class="text-4xl font-bold">Login</h1>
+      <h1 class="heading">Login</h1>
     </div>
 
     <form [formGroup]="form" (ngSubmit)="login()">
-      <div class="mt-2 text-xl font-semibold text-red-500" *ngIf="form.errors">
+      <div class="formErrorsDiv" *ngIf="form.errors">
         Email Address or Password is required.
       </div>
       <div class="mt-5">
@@ -13,11 +13,11 @@
           type="email"
           name="email"
           formControlName="email"
-          class="w-full px-4 py-2 shadow-md  rounded-xl form-input focus:outline-none focus:border-purple-500"
+          class="inputStyles"
           placeholder="Email Address"
         />
 
-        <div class="text-red-500" *ngIf="email.touched && email.invalid">
+        <div class="errorMessage" *ngIf="email.touched && email.invalid">
           <div *ngIf="email.errors.required">email address is required</div>
           <div *ngIf="email.errors.email">valid email is required</div>
         </div>
@@ -27,10 +27,10 @@
           type="password"
           name="password"
           formControlName="password"
-          class="w-full px-4 py-2 shadow-md  rounded-xl form-input focus:outline-none focus:border-purple-500"
+          class="inputStyles"
           placeholder="Password"
         />
-        <div class="text-red-500" *ngIf="password.touched && password.invalid">
+        <div class="errorMessage" *ngIf="password.touched && password.invalid">
           <div *ngIf="password.errors.required">password is required</div>
           <div *ngIf="password.errors.minlength">
             password should be at least 8 characters long
@@ -39,11 +39,7 @@
       </div>
 
       <div class="mt-5">
-        <button
-          class="px-4 py-2 text-gray-300 bg-purple-900 rounded-md  hover:text-white hover:bg-purple-700 foc us:outline-none"
-        >
-          Login
-        </button>
+        <button class="loginUpBtn">Login</button>
       </div>
     </form>
   </div>

@@ -1,11 +1,9 @@
-<div class="flex justify-center mt-5">
-  <div class="flex flex-col w-2/5 px-4 py-4 bg-white rounded-lg shadow-lg">
+<div class="mainDiv">
+  <div class="innerDiv">
     <div class="content-center">
-      <h1 class="text-4xl font-bold">SignUp</h1>
-      <div class="mt-1" *ngIf="form.errors">
-        <p class="mt-1 text-red-500">
-          *All fields Required in order to signUp.
-        </p>
+      <h1 class="heading">SignUp</h1>
+      <div class="mt-1 formErrors" *ngIf="form.errors">
+        <p class="mt-1 formErrors">*All fields Required in order to signUp.</p>
       </div>
     </div>
 
@@ -15,7 +13,7 @@
           type="type"
           name="firstName"
           formControlName="firstName"
-          class="w-full px-4 py-2 shadow-md  rounded-xl form-input focus:outline-none focus:border-purple-500"
+          class="inputStyles"
           placeholder="firstName"
         />
 
@@ -32,7 +30,7 @@
           type="type"
           name="lastName"
           formControlName="lastName"
-          class="w-full px-4 py-2 shadow-md  rounded-xl form-input focus:outline-none focus:border-purple-500"
+          class="inputStyles"
           placeholder="lastName"
         />
 
@@ -49,7 +47,7 @@
           type="date"
           name="dateOfBirth"
           formControlName="dateOfBirth"
-          class="w-full px-4 py-2 shadow-md  rounded-xl form-input focus:outline-none focus:border-purple-500"
+          class="inputStyles"
           placeholder="Date of Birth"
         />
 
@@ -68,7 +66,7 @@
           type="email"
           name="email"
           formControlName="email"
-          class="w-full px-4 py-2 shadow-md  rounded-xl form-input focus:outline-none focus:border-purple-500"
+          class="inputStyles"
           placeholder="Email"
         />
 
@@ -83,7 +81,7 @@
           type="password"
           name="password"
           formControlName="password"
-          class="w-full px-4 py-2 shadow-md  rounded-xl form-input focus:outline-none focus:border-purple-500"
+          class="inputStyles"
           placeholder="Password"
         />
         <div
@@ -98,11 +96,7 @@
       </div>
 
       <div class="mt-5">
-        <button
-          class="px-4 py-2 text-gray-300 bg-purple-900 rounded-md  hover:text-white hover:bg-purple-700 foc us:outline-none"
-        >
-          SignUp
-        </button>
+        <button class="signUpBtn">SignUp</button>
       </div>
     </form>
   </div>
