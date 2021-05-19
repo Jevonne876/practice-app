@@ -2,7 +2,7 @@
   <div class="innerDiv">
     <div class="content-center">
       <h1 class="heading">SignUp</h1>
-      <div class="mt-1 formErrors" *ngIf="form.errors">
+      <div class="mt-1 text-red-500 formErrors" *ngIf="form.errors">
         <p class="mt-1 formErrors">*All fields Required in order to signUp.</p>
       </div>
     </div>
@@ -84,10 +84,7 @@
           class="inputStyles"
           placeholder="Password"
         />
-        <div
-          class="mt-1 text-red-500"
-          *ngIf="password.touched && password.invalid"
-        >
+        <div class="errorMessage" *ngIf="password.touched && password.invalid">
           <div *ngIf="password.errors.required">password is required</div>
           <div *ngIf="password.errors.minlength">
             password should be at least 8 characters long
@@ -96,7 +93,7 @@
       </div>
 
       <div class="mt-5">
-        <button class="signUpBtn">SignUp</button>
+        <button class="loginUpBtn">SignUp</button>
       </div>
     </form>
   </div>

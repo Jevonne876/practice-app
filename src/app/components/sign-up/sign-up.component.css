@@ -1,20 +1,22 @@
 .mainDiv {
-  @apply px-3 mt-5 sm:justify-center sm:flex md:flex md:justify-center;
+  @apply w-full px-3 mt-5 text-center sm:w-11/12 md:text-left md:text-lg md:flex md:justify-center;
 }
 .innerDiv {
-  @apply w-full px-4 py-4 bg-white rounded-lg shadow-lg sm:w-3/4 md:flex md:flex-col md:w-3/4 lg:w-2/5;
-}
-.heading {
-  @apply text-4xl font-bold;
-}
-.formErrors {
-  @apply text-red-500;
+  @apply flex flex-col w-full px-4 py-4 bg-white rounded-lg shadow-lg lg:w-2/5 md:w-2/5;
 }
 
+.heading {
+  @apply text-3xl font-bold text-center md:text-4xl md:text-left;
+}
+.formErrorsDiv {
+  @apply mt-2 text-sm font-semibold text-center text-red-500 md:text-left md:text-lg;
+}
 .inputStyles {
   @apply w-full px-4 py-2 shadow-md rounded-xl form-input focus:outline-none focus:border-purple-500;
 }
-
-.signUpBtn {
+.errorMessage {
+  @apply text-red-500;
+}
+.loginUpBtn {
   @apply px-4 py-2 text-gray-300 bg-purple-900 rounded-md hover:text-white hover:bg-purple-700 focus:outline-none;
 }
