@@ -1,0 +1,7 @@
+<div class="px-10 py-5">
+  <div *ngIf="todos.length === 0; else elseBlock">No Data found</div>
+
+  <ng-template #elseBlock>
+    <div *ngFor="let todo of todos">{{ todo.todoName }}</div>
+  </ng-template>
+</div>
