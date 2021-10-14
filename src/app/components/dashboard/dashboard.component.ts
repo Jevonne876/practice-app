@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Todo } from 'src/app/todo';
+import { Todo } from 'src/app/models/todo';
 import { TodoServiceService } from 'src/app/services/todo-service.service';
+import { share } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,9 +19,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
 
     this.todoService.findAll().subscribe(response => {
-
       this.todos = response;
-
+      share();
     });
 
   }

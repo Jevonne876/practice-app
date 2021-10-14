@@ -1,12 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { from } from 'rxjs';
+import { User } from 'src/app/models/user';
+import { SignUpService } from 'src/app/services/sign-up.service';
 
 @Component({
   selector: 'sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
+
+  userData: User;
+
+  constructor(private signUpService: SignUpService) {
+
+  }
+
+  ngOnInit() {
+
+  }
 
   form = new FormGroup({
     firstName: new FormControl('', [Validators.required]),
@@ -39,9 +52,23 @@ export class SignUpComponent {
   }
 
   signUp() {
-    this.form.setErrors({
-      invalidLogin: true
-    });
+
+    if (this.form.valid) {
+      this.userData = {
+        firstName: this.form.value.firstName,
+        lastName: this.form.value.lastName,
+        dob: this.form.value.dateOfBirth,
+        email: this.form.value.email,
+        password: this.form.value.password
+      }
+      this.signUpService.createUser(this.userData).subscribe();
+
+    } else {
+      this.form.setErrors({
+        inValidData: true
+      })
+    }
+
   }
 
 
