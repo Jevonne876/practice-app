@@ -1,0 +1,25 @@
+.mainDiv {
+  @apply md:w-full md:flex md:justify-center md:mt-4 md:max-h-screen;
+}
+
+.secondaryDiv {
+  @apply text-gray-700 md:font-bold md:text-xl;
+}
+
+.table {
+  @apply border border-purple-900 table-fixed md:w-2/3;
+}
+
+.theadtd {
+  @apply border border-purple-500 md:text-center md:w-44 md:text-xl md:font-bold;
+}
+.tbodytd {
+  @apply border border-purple-900 md:py-6 md:font-semibold md:text-center;
+}
+.editButton {
+  @apply text-white bg-purple-500 rounded-lg md:py-2 md:px-6 hover:bg-purple-700;
+}
+
+.deleteButton {
+  @apply text-white bg-gray-500 rounded-lg md:py-2 md:px-6 hover:bg-gray-700;
+}

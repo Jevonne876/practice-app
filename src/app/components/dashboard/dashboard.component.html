@@ -1,24 +1,40 @@
-<div class="py-10 flex justify-center w-full">
-  <div *ngIf="todos.length === 0; else elseBlock">No Data found</div>
+<div class="mainDiv">
+  <div class="secondaryDiv" *ngIf="todos.length === 0; else elseBlock">
+    No Data Found
+  </div>
 
-  <ng-template #elseBlock>
-    <table>
-      <thead>
-        <tr class="flex space-x-16">
-          <th>Todo Name</th>
-          <th>Due Date</th>
-          <th>Completed</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="flex space-x-10" *ngFor="let todo of todos">
-          <td>{{ todo.todoName }}</td>
-          <td>{{ todo.dueDate }}</td>
-          <td class="px-10">
-            {{ todo.isCompleted ? "True" : "False" }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </ng-template>
+  <div>
+    <ng-template #elseBlock>
+      <table class="table">
+        <thead>
+          <tr>
+            <td class="theadtd">Todo Name</td>
+            <td class="theadtd">Due Date</td>
+            <td class="theadtd">Is Completed</td>
+            <td class="theadtd">Edit</td>
+            <td class="theadtd">Delete</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let todo of todos">
+            <td class="tbodytd md:text-md">
+              {{ todo.todoName }}
+            </td>
+            <td class="tbodytd md:text-md">
+              {{ todo.dueDate }}
+            </td>
+            <td class="tbodytd md:text-md">
+              {{ todo.isCompleted ? "True" : "False" }}
+            </td>
+            <td class="tbodytd md:text-md">
+              <button class="editButton">Edit</button>
+            </td>
+            <td class="md:text-md tbodytd">
+              <button class="deleteButton">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-template>
+  </div>
 </div>
