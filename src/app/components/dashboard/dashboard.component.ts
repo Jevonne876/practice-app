@@ -13,6 +13,8 @@ export class DashboardComponent implements OnInit {
 
   todos: Todo[] = [];
 
+  todo: string = '';
+
   constructor(private todoService: TodoServiceService) { }
 
 
@@ -22,6 +24,13 @@ export class DashboardComponent implements OnInit {
       this.todos = response;
       share();
     });
+
+  }
+
+  getTodoById(todoId: string) {
+
+    this.todo = todoId;
+    console.log(this.todo);
 
   }
 

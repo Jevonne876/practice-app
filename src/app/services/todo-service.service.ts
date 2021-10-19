@@ -21,5 +21,12 @@ export class TodoServiceService {
     return this.http.get<Todo[]>(this.url);
   }
 
+  public findById(todoId: string): Observable<Todo[]> {
+
+    this.url = "http://localhost:8080/api/v1/get/todo/" + todoId;
+
+    return this.http.get<Todo[]>(this.url);
+  }
+
 
 }
