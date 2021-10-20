@@ -8,24 +8,18 @@ import { Observable } from 'rxjs';
 })
 export class TodoServiceService {
 
-  private url: string;
-
   constructor(private http: HttpClient) {
-
-    this.url = "http://localhost:8080/api/v1/get/todos";
 
   }
 
   public findAll(): Observable<Todo[]> {
 
-    return this.http.get<Todo[]>(this.url);
+    return this.http.get<Todo[]>("http://localhost:8080/api/v1/get/todos");
   }
 
   public findById(todoId: string): Observable<Todo[]> {
 
-    this.url = "http://localhost:8080/api/v1/get/todo/" + todoId;
-
-    return this.http.get<Todo[]>(this.url);
+    return this.http.get<Todo[]>("http://localhost:8080/api/v1/get/todo/" + todoId);
   }
 
 
