@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Todo } from 'src/app/models/todo';
+import { Response } from 'src/app/models/response';
 import { TodoServiceService } from 'src/app/services/todo-service.service';
-import { share } from 'rxjs/operators';
+import { catchError, share } from 'rxjs/operators';
+import { Todo } from 'src/app/models/todo';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,17 +12,23 @@ import { share } from 'rxjs/operators';
 export class DashboardComponent implements OnInit {
 
   todos: Todo[] = [];
+  response: Response;
 
   todo: string = '';
-
   constructor(private todoService: TodoServiceService) { }
 
 
   ngOnInit(): void {
 
-    this.todoService.findAll().subscribe(response => {
-      this.todos = response;
-      share();
+    this.todoService.findAll().subscribe((response) => {
+
+      this.response = response;
+
+      if (this.response.statusCode === 200) {
+        this.todos = response['data'];
+      } else {
+        console.log('InCorrect Status Code')
+      }
     });
 
   }

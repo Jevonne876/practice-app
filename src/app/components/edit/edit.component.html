@@ -1,1 +1,38 @@
-<ul *ngFor="let todo of todo | keyvalue"></ul>
+<div class="mainDiv" *ngIf="todo">
+  <div class="innerDiv">
+    <div class="content-center">
+      <h1 class="heading">Edit Todo</h1>
+    </div>
+
+    <form [(formGroup)]="form">
+      <div class="formErrorsDiv">
+        All Fields are required in order to complete update.
+      </div>
+      <div class="mt-5">
+        <input
+          type="text"
+          name="todoName"
+          formControlName="todoName"
+          class="inputStyles"
+          placeholder="Todo Name"
+        />
+      </div>
+      <div class="mt-5">
+        <input
+          type="date"
+          name="dueDate"
+          formControlName="dueDate"
+          class="inputStyles"
+          placeholder="Due Date"
+        />
+        <!-- <div class="errorMessage" *ngIf="dueDate.touched && dueDate.invalid">
+          <div *ngIf="dueDate.errors.required">Due Date is required</div>
+        </div> -->
+      </div>
+
+      <div class="mt-5">
+        <button class="UpdateBtn">Update</button>
+      </div>
+    </form>
+  </div>
+</div>
